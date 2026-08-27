@@ -7,7 +7,6 @@ import asyncio
 TOKEN = os.getenv("TOKEN")
 
 CATEGORY_ID = int(os.getenv("CATEGORY_ID", "0"))
-SUPPORT_ROLE_ID = int(os.getenv("SUPPORT_ROLE_ID", "0"))
 
 intents = discord.Intents.default()
 intents.guilds = True
@@ -136,7 +135,10 @@ class TicketSelect(discord.ui.Select):
             )
         }
 
-        support_role = guild.get_role(SUPPORT_ROLE_ID)
+        support_role = discord.utils.get(
+    guild.roles,
+    name="Suporte"
+        )
 
         if support_role:
 
