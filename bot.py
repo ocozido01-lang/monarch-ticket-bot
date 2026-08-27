@@ -6,11 +6,12 @@ import asyncio
 
 TOKEN = os.getenv("TOKEN")
 
-CATEGORY_ID = int(os.getenv(CATEGORIA_ID = 1534689740991762583))
+CATEGORY_ID = 1534689740991762583
 
 intents = discord.Intents.default()
 intents.guilds = True
 intents.members = True
+intents.message_content = True
 
 class TicketBot(commands.Bot):
 
